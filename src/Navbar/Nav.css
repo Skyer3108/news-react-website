@@ -1,0 +1,26 @@
+.nav{
+    height:fit-content;
+   background-color: aliceblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   padding: 10px;
+   
+}
+
+.list{
+    display: flex;
+   
+    justify-content: space-between;
+}
+.list li{
+    padding: 5px;
+    border-radius: 10px;
+   list-style: none;
+   margin-left: 20px;
+}
+.list li:hover{
+cursor: pointer;
+
+background-color:darkgray
+}

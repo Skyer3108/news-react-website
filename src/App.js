@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import Nav from './Navbar/Nav'
+
+import { useState } from 'react'
+
+import News from './Components/NewsList/News'
+import { createContext } from 'react'
+
+
+export const store = createContext()
 
 function App() {
+   
+  const [category, setCategory] = useState('')
+
+   
+
+   const [searchVal,setSearchVal]=useState('')
+
+
+   console.log(category)
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <store.Provider value={{category,setCategory,searchVal,setSearchVal}}>
+
+    <div>
+
+      <Nav />
+      <News />
+
+
     </div>
-  );
+  </store.Provider>
+  )
 }
 
 export default App;
